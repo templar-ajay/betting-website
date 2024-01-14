@@ -12,6 +12,22 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "featured_match_image": {
+          "type": "Image",
+          "config": {
+            "label": "Featured Match Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "featured_image_link": {
+          "type": "Link",
+          "config": {
+            "label": "Featured Image Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
         "bond": {
           "type": "StructuredText",
           "config": {
@@ -65,8 +81,8 @@
           "config": {
             "label": "Image",
             "constraint": {
-              "width": 1280,
-              "height": 720
+              "width": null,
+              "height": null
             },
             "thumbnails": []
           }

@@ -120,7 +120,14 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
       >
-        <div className="pt-[4rem] sm:pt-[6rem]"></div>
+        <div className="pt-[4rem] sm:pt-[4rem]">
+          <PrismicNextLink field={slice.primary.featured_image_link}>
+            <PrismicNextImage
+              className="mx-auto"
+              field={slice.primary.featured_match_image}
+            />
+          </PrismicNextLink>
+        </div>
         <div className="bond-div uppercase">
           <PrismicRichText
             field={slice.primary.bond}
@@ -153,7 +160,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         </div>
         <div className="mx-[0rem] mobile:mx-[2rem] md:mx-[8rem]">
           <div className="image-div">
-            <PrismicNextImage field={slice.primary.image} className="py-4" />
+            <PrismicNextImage
+              field={slice.primary.image}
+              className="py-4 mx-auto"
+            />
           </div>
           <div className="cta-div mt-8 md:mt-16 mx-auto max-w-xl ">
             {slice.primary.cta_text?.length && (

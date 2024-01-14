@@ -153,26 +153,26 @@ interface FooterDocumentData {
   whatsapp_icon_background_color: prismic.ColorField;
 
   /**
-   * Medical Marketing Website Link field in *Footer*
+   * Website Developer Link field in *Footer*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.medical_marketing_website_link
+   * - **API ID Path**: footer.website_developer_link
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  medical_marketing_website_link: prismic.LinkField;
+  website_developer_link: prismic.LinkField;
 
   /**
-   * Medical Marketing Website Link Text field in *Footer*
+   * Website Developer Link Text field in *Footer*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.medical_marketing_website_link_text
+   * - **API ID Path**: footer.website_developer_website_link_text
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  medical_marketing_website_link_text: prismic.KeyTextField;
+  website_developer_website_link_text: prismic.KeyTextField;
 }
 
 /**
@@ -310,6 +310,7 @@ export type IframeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<IframeDocumentData>, "iframe", Lang>;
 
 type LandingPageDocumentDataSlicesSlice =
+  | TitleTextImageSlice
   | ComparisonSlice
   | Section2Slice
   | Section3Slice
@@ -804,6 +805,26 @@ export type ComparisonSlice = prismic.SharedSlice<
  */
 export interface HeroSliceDefaultPrimary {
   /**
+   * Featured Match Image field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.featured_match_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_match_image: prismic.ImageField<never>;
+
+  /**
+   * Featured Image Link field in *Hero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.featured_image_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  featured_image_link: prismic.LinkField;
+
+  /**
    * Bond field in *Hero → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1200,6 +1221,16 @@ export interface Section1SliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
+
+  /**
+   * Image Link field in *Section1 → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section1.primary.image_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  image_link: prismic.LinkField;
 
   /**
    * Text field in *Section1 → Primary*
@@ -2071,6 +2102,81 @@ export type SmallBackgroundImageSlice = prismic.SharedSlice<
   SmallBackgroundImageSliceVariation
 >;
 
+/**
+ * Primary content in *TitleTextImage → Primary*
+ */
+export interface TitleTextImageSliceDefaultPrimary {
+  /**
+   * Title field in *TitleTextImage → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: title_text_image.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Text field in *TitleTextImage → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: title_text_image.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Image field in *TitleTextImage → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: title_text_image.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Image and Text Link field in *TitleTextImage → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: title_text_image.primary.image_and_text_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  image_and_text_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for TitleTextImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TitleTextImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TitleTextImageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TitleTextImage*
+ */
+type TitleTextImageSliceVariation = TitleTextImageSliceDefault;
+
+/**
+ * TitleTextImage Shared Slice
+ *
+ * - **API ID**: `title_text_image`
+ * - **Description**: TitleTextImage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TitleTextImageSlice = prismic.SharedSlice<
+  "title_text_image",
+  TitleTextImageSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -2131,6 +2237,10 @@ declare module "@prismicio/client" {
       SmallBackgroundImageSliceDefaultPrimary,
       SmallBackgroundImageSliceVariation,
       SmallBackgroundImageSliceDefault,
+      TitleTextImageSlice,
+      TitleTextImageSliceDefaultPrimary,
+      TitleTextImageSliceVariation,
+      TitleTextImageSliceDefault,
     };
   }
 }

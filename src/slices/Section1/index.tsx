@@ -5,7 +5,7 @@ import Button from "@/components/Button";
 import Heading from "@/components/Heading";
 import Paragraph from "@/components/Paragraph";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import {
   JSXMapSerializer,
   PrismicRichText,
@@ -128,7 +128,9 @@ const Section1 = ({ slice }: Section1Props): JSX.Element => {
         </div>
         {Boolean(slice.primary.image) && (
           <div className="flex justify-center">
-            <PrismicNextImage field={slice.primary.image} />
+            <PrismicNextLink field={slice.primary.image_link}>
+              <PrismicNextImage field={slice.primary.image} />
+            </PrismicNextLink>
           </div>
         )}
         <div className="text-div max-w-3xl mx-auto">

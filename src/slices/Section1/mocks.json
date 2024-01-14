@@ -192,6 +192,13 @@
 				"__TYPE__": "FieldContent",
 				"value": "#2d6655",
 				"type": "Color"
+			},
+			"image_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
 			}
 		},
 		"items": []

@@ -41,12 +41,7 @@ const components: componentsType = ({ title_color, text_color }) => {
     },
     heading3: ({ children }) => {
       return (
-        <Heading
-          as="h3"
-          size="xs"
-          className="font-body mb-2"
-          color={title_color}
-        >
+        <Heading as="h3" size="xs" className="font-body" color={title_color}>
           {children}
         </Heading>
       );
@@ -221,7 +216,7 @@ const Section2 = ({ slice }: Section2Props): JSX.Element => {
                     slice.primary.key_point_background_color ||
                     "rgba(31, 41, 55, 0.8)",
                 }}
-                className="bg-gray-800/80 flex flex-wrap mobile:flex-nowrap gap-y-4 rounded-xl my-10 pt-5"
+                className="bg-gray-800/80 flex flex-wrap mobile:flex-nowrap gap-y-4 rounded-xl my-10 py-5"
               >
                 <div
                   style={{ width: "50px" }}
@@ -240,7 +235,7 @@ const Section2 = ({ slice }: Section2Props): JSX.Element => {
                     </div>
                   </div>
                 </div>
-                <div className="block ml-[40px] md:ml-[56px] pr-5">
+                <div className="flex items-center ml-[40px] md:ml-[56px] pr-5 w-full">
                   <PrismicRichText
                     field={heading}
                     components={components({
@@ -248,16 +243,6 @@ const Section2 = ({ slice }: Section2Props): JSX.Element => {
                       text_color: slice.primary.text_color,
                     })}
                   />
-                  <div className="description-div mb-8">
-                    <PrismicRichText
-                      key={"description" + index}
-                      field={description}
-                      components={components({
-                        title_color: slice.primary.title_color,
-                        text_color: slice.primary.text_color,
-                      })}
-                    />
-                  </div>
                 </div>
               </div>
             ))}

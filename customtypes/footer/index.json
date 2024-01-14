@@ -93,18 +93,19 @@
           "placeholder": ""
         }
       },
-      "medical_marketing_website_link": {
+      "website_developer_link": {
         "type": "Link",
         "config": {
-          "label": "Medical Marketing Website Link",
+          "label": "Website Developer Link",
           "placeholder": "",
+          "allowTargetBlank": true,
           "select": null
         }
       },
-      "medical_marketing_website_link_text": {
+      "website_developer_website_link_text": {
         "type": "Text",
         "config": {
-          "label": "Medical Marketing Website Link Text",
+          "label": "Website Developer Link Text",
           "placeholder": ""
         }
       }
