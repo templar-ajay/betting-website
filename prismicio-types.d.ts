@@ -153,6 +153,28 @@ interface FooterDocumentData {
   whatsapp_icon_background_color: prismic.ColorField;
 
   /**
+   * Telegram Link field in *Footer*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.telegram_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  telegram_link: prismic.LinkField;
+
+  /**
+   * Telegram Icon Background Color field in *Footer*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.telegram_icon_background_color
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  telegram_icon_background_color: prismic.ColorField;
+
+  /**
    * Website Developer Link field in *Footer*
    *
    * - **Field Type**: Link

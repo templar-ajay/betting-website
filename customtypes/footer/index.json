@@ -93,6 +93,21 @@
           "placeholder": ""
         }
       },
+      "telegram_link": {
+        "type": "Link",
+        "config": {
+          "label": "Telegram Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "telegram_icon_background_color": {
+        "type": "Color",
+        "config": {
+          "label": "Telegram Icon Background Color",
+          "placeholder": ""
+        }
+      },
       "website_developer_link": {
         "type": "Link",
         "config": {
