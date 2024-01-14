@@ -41,7 +41,12 @@ const components: componentsType = ({ title_color, text_color }) => {
     },
     heading3: ({ children }) => {
       return (
-        <Heading as="h3" size="xs" className="font-body" color={title_color}>
+        <Heading
+          as="h3"
+          size="xs"
+          className="font-body text-center mobile:text-left !text-3xl sm:!text-3xl md:!text-4xl"
+          color={title_color}
+        >
           {children}
         </Heading>
       );
@@ -235,7 +240,7 @@ const Section2 = ({ slice }: Section2Props): JSX.Element => {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center ml-[40px] md:ml-[56px] pr-5 w-full">
+                <div className="flex items-center justify-center mobile:justify-normal ml-5 mobile:ml-[40px] md:ml-[56px] pr-5 w-full">
                   <PrismicRichText
                     field={heading}
                     components={components({
